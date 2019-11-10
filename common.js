@@ -3,6 +3,8 @@ const isId = require('mongoose').Types.ObjectId.isValid
 
 module.exports.getFilter = getFilter;
 	function getFilter(query) {
+		if (query.filter === '' && query.filterBy === '') return {}
+
 		if (isId(query.filterBy)) {
 			return { [query.filter]: ObjectId(query.filterBy) }
 		}
