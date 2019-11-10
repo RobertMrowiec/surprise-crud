@@ -1,0 +1,34 @@
+{
+  "author": {
+    "name": "Robert Mrowiec"
+  },
+  "bugs": {
+    "url": "https://github.com/black09bb/expressCrud/issues"
+  },
+  "bundleDependencies": false,
+  "deprecated": false,
+  "description": "Simple Express Mongoose Crud - This npm allow You to use basic crud for Express with Mongoose like: GET, GETBYID, POST, PUT, DELETE",
+  "homepage": "https://github.com/black09bb/expressCrud#readme",
+  "keywords": [
+    "Nodejs",
+    "Express",
+    "Crud",
+    "Mongoose",
+    "MongoDB",
+    "Javascript"
+  ],
+  "license": "ISC",
+  "main": "index.js",
+  "name": "surprise-crud",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/black09bb/expressCrud.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "0.1.6",
+  "dependencies": {
+    "mongoose": "^5.7.9"
+  }
+}
