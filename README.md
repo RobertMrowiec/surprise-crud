@@ -28,7 +28,9 @@ At this moment, this package works only with MongoDB and Express, but soon will 
 ## Setup
 After installing package, go to any of Your route file ( or create new one ) and import: 
 * `import { crud } from 'surprise-crud'`
+
 OR 
+
 * `const { crud } = require('surprise-crud')`
 
 Your imports should look like: 
