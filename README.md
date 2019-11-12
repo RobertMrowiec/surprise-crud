@@ -1,12 +1,12 @@
 # Surprise-CRUD
 
 It's package which creates default CRUD options for Your applications. You don't have to care about:
-* GET /,
-* GET By ID /:id, 
-* GET Pagination /page/:page/limit/:limit, 
-* POST /, 
-* PUT By ID /:id, 
-* DELETE By ID /:id
+* GET,
+* GET By ID, 
+* GET Pagination, 
+* POST, 
+* PUT By ID, 
+* DELETE By ID
 
 It will setup it for You.
 
@@ -60,22 +60,46 @@ As last ( at this moment ) parameter, it takes options. **THEY ARE OPTIONAL!** O
 }
 ```
 
-**URL for Your endpoint is Your collection name** (if You don't override it with app.use('/some_endpoint_name'))
+**Default URL for Your endpoint is /api/your-collection-name/:method**
 
+You can disable it by using option "pathFromCollection: false" and defining name on Your own as first parameter of app.use()
+
+Some endpoints examples:
+ 
 For example:
 * Collection name: Users
-* Path: /users
+* Example method: Get
+* HTTP Method: GET
+* Path: /api/users
+
+------------------------
+
+* Collection name: Users
+* Example method: GetPagination
+* HTTP Method: GET
+* Path: /api/users/page/:page/limit/:limit
+
+------------------------
 
 * Collection name: Projects
-* Path: /projects
+* Example method: Post
+* HTTP Method: POST
+* Path: /api/projects
+
+------------------------
+
+* Collection name: Projects
+* Example method: Put
+* HTPP Method: PUT
+* Path: /api/projects/:id
 
 ## Available Methods
-* Get
-* GetById
-* GetPagination
-* Post
-* Put
-* Delete
+* Get - /
+* GetById - /:id
+* GetPagination - /page/:page/limit/:limit
+* Post - /
+* Put - /:id
+* Delete - /:id
 
 ## Example
 * Example route file with only Get and GetById method and sort by name: 
@@ -90,7 +114,20 @@ crud(Currency, router, { methods: ['Get', 'GetById'], sort: 'name' });
 
 module.exports = router;
 ```
+------------------------
+* Example route file with custom path ( `pathFromCollection` set to false ) : 
 
+```
+const express = require('express');
+const router = express.Router();
+const Currency = require('../models/Currency');
+const { crud } = require('surprise-crud');
+
+crud(Currency, router, { pathFromCollection: false });
+
+module.exports = router;
+```
+------------------------
 * Example route file with every methods ( remember they're default, so if You don't pass any method array, every method will be available ) and default sort: 
 
 ```
@@ -102,7 +139,6 @@ const { crud } = require('surprise-crud');
 crud(Users, router);
 
 module.exports = router;
-
 ```
 
 ## Tests
