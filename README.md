@@ -1,9 +1,9 @@
 # Surprise-CRUD
 
-It's package which creates default CRUD options for Your applications. You don't have to care about:
+It's a package which creates default CRUD options for Your applications. You don't have to care about:
 * GET,
 * GET By ID, 
-* GET Pagination, 
+* GET with Pagination, 
 * POST, 
 * PUT By ID, 
 * DELETE By ID
@@ -12,14 +12,15 @@ It will setup it for You.
 
 ## Prerequisites
 
-You will need the following things properly installed on your computer.
-At this moment, this package works only with MongoDB and Express, but soon will be also with PostgreSQL database and Koa.js framework
+You will need the following things installed on your computer.
+At this moment, this package works only with MongoDB and Express, but soon will be working also with PostgreSQL database and Koa.js framework
+
 * [Node.js](http://nodejs.org/) (with NPM)
 * [Express](http://expressjs.com/)
 * [MongoDB](http://mongodb.com/)
 * [Mongoose](https://mongoosejs.com/)
 
-* Project configured with working `express.Router()`, connection to MongoDB and bodyParser
+* Project configured with working `express.Router()`, connection to MongoDB and bodyParser / or just use my example app described below in Examples section.
 
 ## Installation
 
@@ -43,16 +44,16 @@ const { crud } = require('surprise-crud')
 Now we can move to configuration.
 
 ## Configuration
-After setup, just add this line to Your file: 
+After setup, just add this line to Your router file: 
 
 ```crud(model, router, options)```
 
 You probably think, what model and options are? So let's start talking about how this CRUD function works.
-It needs model as first parameter. I'm sure You have a model for Your collection, if not, read it: [Mongoose Models](https://mongoosejs.com/docs/models.html)
+It needs model as first argument. I'm sure You have a model for Your collection, if not, read it: [Mongoose Models](https://mongoosejs.com/docs/models.html) Just import it and simply replace the first argument with Your model.
 
-As second parameter, it takes router, which You already have imported.
+As second argument, it takes router, which You already have imported.
 
-As last ( at this moment ) parameter, it takes options. **THEY ARE OPTIONAL!** Options is an object: 
+As last argument, it takes `options`. **THEY ARE OPTIONAL!** `options` is an object containing: 
 ```
 {
 	sort: String (You can pass here any name of value from collection. Default is 'createDate')
@@ -61,9 +62,9 @@ As last ( at this moment ) parameter, it takes options. **THEY ARE OPTIONAL!** O
 }
 ```
 
-**By default URL for Your endpoints are /api/your-collection-name/:method, cause pathFromCollection option is set to TRUE**
+**By default URLs for Your endpoints are /api/your-collection-name/:method, cause pathFromCollection option is set to TRUE**
 
-You can disable it by using option "pathFromCollection: false" and defining name on Your own as first parameter of app.use()
+You can disable it by using setting it to `false` in `options` object and defining endpoint name on Your own as first parameter of app.use() in Your app
 
 Some endpoints examples:
  
@@ -102,9 +103,9 @@ For example:
 * Put - /:id
 * Delete - /:id
 
-## Examples
+## Real code examples
 
-:heavy_exclamation_mark: Tomorrow ( 13.10.2019 ) example app will be posted :heavy_exclamation_mark:
+:heavy_exclamation_mark: [Example app](https://github.com/RobertMrowiec/surprise-crud-example-app) :heavy_exclamation_mark:
 
 * Example route file with only Get and GetById method and sort by name: 
 
@@ -146,7 +147,7 @@ module.exports = router;
 ```
 
 ## Tests
-```Very Soon```
+`Soon`
 
-### Problems
+## Problems
 If You get some problems, don't be afraid to contact or create an issue :) 
