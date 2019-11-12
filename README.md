@@ -19,7 +19,7 @@ At this moment, this package works only with MongoDB and Express, but soon will 
 * [MongoDB](http://mongodb.com/)
 * [Mongoose](https://mongoosejs.com/)
 
-* Project configured with working express.Router() and connection to MongoDB
+* Project configured with working `express.Router()` and connection to MongoDB
 
 ## Installation
 
@@ -44,14 +44,15 @@ Now we can move to configuration.
 
 ## Configuration
 After setup, just add this line to Your file: 
+
 ```crud(model, router, options)```
 
-You probably think, what model and options are? So let's start to talk about how crud function works.
+You probably think, what model and options are? So let's start talking about how this CRUD function works.
 It needs model as first parameter. I'm sure You have a model for Your collection, if not, read it: (https://mongoosejs.com/docs/models.html)
 
-As second parameter, it takes router, which You already have.
+As second parameter, it takes router, which You already have imported.
 
-As last ( at this moment ) parameter, it takes options. Options is an object: 
+As last ( at this moment ) parameter, it takes options. **THEY ARE OPTIONAL!** Options is an object: 
 ```
 {
 	sort: String (You can pass here any name of value from collection. Default is 'createDate')
