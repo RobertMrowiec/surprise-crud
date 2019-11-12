@@ -52,7 +52,7 @@ It needs model as first parameter. I'm sure You have a model for Your collection
 
 As second parameter, it takes router, which You already have imported.
 
-As last ( at this moment ) parameter, it takes options. Options is an object: 
+As last ( at this moment ) parameter, it takes options. **THEY ARE OPTIONAL!** Options is an object: 
 ```
 {
 	sort: String (You can pass here any name of value from collection. Default is 'createDate')
