@@ -146,4 +146,4 @@ module.exports = router;
 ```Very Soon```
 
 ### Problems
-If get some problems, don't be afraid to create an Issue :) 
+If You get some problems, don't be afraid to contact or create an issue :) 
