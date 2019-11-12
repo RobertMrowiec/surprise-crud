@@ -1,12 +1,12 @@
 # Surprise-CRUD
 
 It's package which creates default CRUD options for Your applications. You don't have to care about:
-[] - GET /,
-[] - GET By ID /:id, 
-[] - GET Pagination /page/:page/limit/:limit, 
-[] - POST /, 
-[] - PUT By ID /:id, 
-[] - DELETE By ID /:id
+* GET /,
+* GET By ID /:id, 
+* GET Pagination /page/:page/limit/:limit, 
+* POST /, 
+* PUT By ID /:id, 
+* DELETE By ID /:id
 
 It will setup it for You.
 
