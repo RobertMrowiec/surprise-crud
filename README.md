@@ -65,7 +65,7 @@ As last ( at this moment ) parameter, it takes options. Options is an object:
 * GetPagination
 * Post
 * Put
-* DELETE
+* Delete
 
 ## Example
 * Example route file with only Get and GetById method and sort by name: 
