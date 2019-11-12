@@ -48,7 +48,7 @@ After setup, just add this line to Your file:
 ```crud(model, router, options)```
 
 You probably think, what model and options are? So let's start talking about how this CRUD function works.
-It needs model as first parameter. I'm sure You have a model for Your collection, if not, read it: (https://mongoosejs.com/docs/models.html)
+It needs model as first parameter. I'm sure You have a model for Your collection, if not, read it: [Mongoose Models](https://mongoosejs.com/docs/models.html)
 
 As second parameter, it takes router, which You already have imported.
 
@@ -56,7 +56,7 @@ As last ( at this moment ) parameter, it takes options. **THEY ARE OPTIONAL!** O
 ```
 {
 	sort: String (You can pass here any name of value from collection. Default is 'createDate')
-	methods: Array[] (You can pass here any methods from available methods mentioned below in ## Available Methods. Default all of them are active)
+	methods: Array[] (You can pass here any methods from available methods mentioned below in Available Methods section. By default all of them are active)
 	pathFromCollection: Boolean
 }
 ```
