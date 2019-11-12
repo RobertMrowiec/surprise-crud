@@ -18,7 +18,7 @@ module.exports.getFilter = getFilter;
 			return { [query.filter]: +query.filterBy }
 		}
 
-		return { [query.filter]: query.filterBy }
+		return { [query.filter]: { $regex: new RegExp(query.filterBy, 'i') }}
 	}
 
 module.exports.defaultResponse = defaultResponse
