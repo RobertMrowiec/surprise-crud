@@ -56,11 +56,12 @@ As last ( at this moment ) parameter, it takes options. **THEY ARE OPTIONAL!** O
 ```
 {
 	sort: String (You can pass here any name of value from collection. Default is 'createDate')
-	methods: Array[] (You can pass here any methods from available methods mentioned below. Default are all of them)
+	methods: Array[] (You can pass here any methods from available methods mentioned below in ## Available Methods. Default all of them are active)
+	pathFromCollection: Boolean
 }
 ```
 
-**Default URL for Your endpoint is /api/your-collection-name/:method**
+**By default URL for Your endpoints are /api/your-collection-name/:method, cause pathFromCollection option is set to TRUE**
 
 You can disable it by using option "pathFromCollection: false" and defining name on Your own as first parameter of app.use()
 
