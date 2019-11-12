@@ -73,7 +73,7 @@ As last ( at this moment ) parameter, it takes options. Options is an object:
 ```
 const express = require('express');
 const router = express.Router();
-const Currency = require('../../../models/core/Currency');
+const Currency = require('../models/Currency');
 const { crud } = require('surprise-crud');
 
 crud(Currency, router, { methods: ['Get', 'GetById'], sort: 'name' });
@@ -86,10 +86,10 @@ module.exports = router;
 ```
 const express = require('express');
 const router = express.Router();
-const Currency = require('../../../models/core/Currency');
+const Users = require('../models/core/Users');
 const { crud } = require('surprise-crud');
 
-crud(Currency, router);
+crud(Users, router);
 
 module.exports = router;
 
