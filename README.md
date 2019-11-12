@@ -31,18 +31,18 @@ After installing package, go to any of Your route file ( or create new one ) and
 OR 
 * `const { crud } = require('surprise-crud')`
 
-Your file should look like: 
-
-* ```shell
+Your imports should look like: 
+```
 	const express = require('express');
 	const router = express.Router();
-	const { crud } = require('surprise-crud')```
+	const { crud } = require('surprise-crud')
+```
 
 Now we can move to configuration.
 
 ## Configuration
 After setup, just add this line to Your file: 
-* `crud(model, router, options)`
+```crud(model, router, options)```
 
 You probably think, what model and options are? So let's start to talk about how crud function works.
 It needs model as first parameter. I'm sure You have a model for Your collection, if not, read it: (https://mongoosejs.com/docs/models.html)
@@ -50,19 +50,20 @@ It needs model as first parameter. I'm sure You have a model for Your collection
 As second parameter, it takes router, which You already have.
 
 As last ( at this moment ) parameter, it takes options. Options is an object: 
-* ```shell
+```
 	{
 		sort: String (You can pass here any name of value from collection. Default is 'createDate')
 		methods: Array[] (You can pass here any methods from available methods mentioned below. Default are all of them)
-	}```
+	}
+```
 
 ## Available Methods
-[] - Get
-[] - GetById
-[] - GetPagination
-[] - Post
-[] - Put
-[] - DELETE
+* Get
+* GetById
+* GetPagination
+* Post
+* Put
+* DELETE
 
 ## Example
 * Example route file with only Get and GetById method and sort by name: 
@@ -93,7 +94,7 @@ module.exports = router;
 ```
 
 ## Tests
-* ```Very Soon```
+```Very Soon```
 
 ### Problems
 If get some problems, don't be afraid to create an Issue :) 
