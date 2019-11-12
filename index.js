@@ -12,7 +12,6 @@ exports.crud = function (
 
 	if (options) {
 		return options.methods.map(method => {
-	
 			switch (method) {
 				case 'Get':
 					return router.get('/', defaultResponse(200, () => collection.find().sort(options.sort)))
