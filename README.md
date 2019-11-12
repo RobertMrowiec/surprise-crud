@@ -102,7 +102,7 @@ For example:
 * Put - /:id
 * Delete - /:id
 
-## Example
+## Examples
 * Example route file with only Get and GetById method and sort by name: 
 
 ```
