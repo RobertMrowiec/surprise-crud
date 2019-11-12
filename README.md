@@ -19,7 +19,7 @@ At this moment, this package works only with MongoDB and Express, but soon will 
 * [MongoDB](http://mongodb.com/)
 * [Mongoose](https://mongoosejs.com/)
 
-* Project configured with working `express.Router()` and connection to MongoDB
+* Project configured with working `express.Router()`, connection to MongoDB and bodyParser
 
 ## Installation
 
