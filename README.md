@@ -19,7 +19,7 @@ At this moment, this package works only with MongoDB and Express, but soon will 
 * [MongoDB](http://mongodb.com/)
 * [Mongoose](https://mongoosejs.com/)
 
-* Project configured with working express.Router() and connection to MongoDB
+* Project configured with working `express.Router()` and connection to MongoDB
 
 ## Installation
 
@@ -44,6 +44,7 @@ Now we can move to configuration.
 
 ## Configuration
 After setup, just add this line to Your file: 
+
 ```crud(model, router, options)```
 
 You probably think, what model and options are? So let's start to talk about how crud function works.
