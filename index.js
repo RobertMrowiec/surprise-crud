@@ -6,28 +6,27 @@ exports.crud = function (
 	options = {}
 ) {
 	if (!options || !options.methods) options.methods = ['Get', 'GetById', 'Pagination', 'Post', 'Put', 'Delete']
-
-	console.log(options);
 	if (!options.sort) options.sort = '-createDate'
 
 	if (options) {
+		const path = collection.collection.name
 		return options.methods.map(method => {
 			switch (method) {
 				case 'Get':
-					return router.get('/', defaultResponse(200, () => collection.find().sort(options.sort)))
+					return router.get(`/${path}/`, defaultResponse(200, () => collection.find().sort(options.sort)))
 				case 'GetById':
-					return router.get('/:id', defaultResponse(200, req => collection.findById(req.params.id)))
+					return router.get(`/${path}/:id`, defaultResponse(200, req => collection.findById(req.params.id)))
 				case 'Pagination':
-					return router.get('/page/:page/limit/:limit', defaultResponse(200, req => {
+					return router.get(`/${path}/page/:page/limit/:limit`, defaultResponse(200, req => {
 						req.query.sort = options.sort
 						return pagination(req, collection)
 					}))
 				case 'Post':
-					return router.post('/', defaultResponse(201, req => new collection(req.body).save()))
+					return router.post(`/${path}/`, defaultResponse(201, req => new collection(req.body).save()))
 				case 'Put':
-					return router.put('/:id', defaultResponse(200, req => collection.findByIdAndUpdate(req.params.id, req.body, { new: true })))
+					return router.put(`/${path}/:id`, defaultResponse(200, req => collection.findByIdAndUpdate(req.params.id, req.body, { new: true })))
 				case 'Delete':
-					return router.delete('/:id', defaultResponse(200, req => collection.findByIdAndRemove(req.params.id)))
+					return router.delete(`/${path}/:id`, defaultResponse(200, req => collection.findByIdAndRemove(req.params.id)))
 			}
 		})
 	}
