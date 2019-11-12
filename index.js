@@ -10,7 +10,7 @@ exports.crud = function (
 	if (!options.pathFromCollection && options.pathFromCollection !== false) options.pathFromCollection = true
 
 	if (options) {
-		const path = options.pathFromCollection ? `/${collection.collection.name}` : ''
+		const path = options.pathFromCollection ? `/api/${collection.collection.name}` : ''
 		
 		return options.methods.map(method => {
 			switch (method) {
