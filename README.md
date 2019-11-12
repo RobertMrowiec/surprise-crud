@@ -103,6 +103,9 @@ For example:
 * Delete - /:id
 
 ## Examples
+
+:heavy_exclamation_mark: Tomorrow ( 13.10.2019 ) example app will be posted :heavy_exclamation_mark:
+
 * Example route file with only Get and GetById method and sort by name: 
 
 ```
