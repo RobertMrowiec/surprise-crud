@@ -60,6 +60,14 @@ As last ( at this moment ) parameter, it takes options. **THEY ARE OPTIONAL!** O
 }
 ```
 
+URL for Your endpoint is Your collection name (if You don't override it with app.use('/some_endpoint'))
+For example:
+* Collection name: Users
+* Path: /users
+
+* Collection name: Projects
+* Path: /projects
+
 ## Available Methods
 * Get
 * GetById
