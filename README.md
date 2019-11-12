@@ -35,9 +35,9 @@ OR
 
 Your imports should look like: 
 ```
-	const express = require('express');
-	const router = express.Router();
-	const { crud } = require('surprise-crud')
+const express = require('express');
+const router = express.Router();
+const { crud } = require('surprise-crud')
 ```
 
 Now we can move to configuration.
@@ -53,10 +53,10 @@ As second parameter, it takes router, which You already have.
 
 As last ( at this moment ) parameter, it takes options. Options is an object: 
 ```
-	{
-		sort: String (You can pass here any name of value from collection. Default is 'createDate')
-		methods: Array[] (You can pass here any methods from available methods mentioned below. Default are all of them)
-	}
+{
+	sort: String (You can pass here any name of value from collection. Default is 'createDate')
+	methods: Array[] (You can pass here any methods from available methods mentioned below. Default are all of them)
+}
 ```
 
 ## Available Methods
