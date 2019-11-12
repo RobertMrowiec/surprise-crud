@@ -47,10 +47,10 @@ After setup, just add this line to Your file:
 
 ```crud(model, router, options)```
 
-You probably think, what model and options are? So let's start to talk about how crud function works.
+You probably think, what model and options are? So let's start talking about how this CRUD function works.
 It needs model as first parameter. I'm sure You have a model for Your collection, if not, read it: (https://mongoosejs.com/docs/models.html)
 
-As second parameter, it takes router, which You already have.
+As second parameter, it takes router, which You already have imported.
 
 As last ( at this moment ) parameter, it takes options. Options is an object: 
 ```
