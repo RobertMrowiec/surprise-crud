@@ -20,21 +20,31 @@ At this moment, this package works only with MongoDB and Express, but soon will 
 * [MongoDB](http://mongodb.com/)
 * [Mongoose](https://mongoosejs.com/)
 
-* Project configured with working `express.Router()`, connection to MongoDB and bodyParser / or just use my example app described below in Examples section.
+* Project configured with: 
+	* working `express.Router()`, 
+	* working connection to MongoDB
+	* bodyParser
 
-## Installation
+* or just use my example app described below in Real code examples section.
 
-* `npm install --save surprise-crud`
+# Installation
 
-## Setup
-After installing package, go to any of Your route file ( or create new one ) and import: 
-* `import { crud } from 'surprise-crud'`
+Just simply install package with npm: </br>
+`npm install --save surprise-crud`
 
-OR 
+# Setup
+After installing package, go to any of Your route file ( or create new one ) and import package:
 
-* `const { crud } = require('surprise-crud')`
+```
+import { crud } from 'surprise-crud'
+```
+OR
+```
+const { crud } = require('surprise-crud')
+```
 
-Your imports should look like: 
+Your imports should now looks like:
+
 ```
 const express = require('express');
 const router = express.Router();
@@ -43,32 +53,55 @@ const { crud } = require('surprise-crud')
 
 Now we can move to configuration.
 
-## Configuration
+# Configuration
 After setup, just add this line to Your router file: 
 
-```crud(model, router, options)```
+```
+crud(model, router, options)
+```
 
-You probably think, what model and options are? So let's start talking about how this CRUD function works.
-It needs model as first argument. I'm sure You have a model for Your collection, if not, read it: [Mongoose Models](https://mongoosejs.com/docs/models.html) Just import it and simply replace the first argument with Your model.
+You probably think, what model and options are? So let's start talking about how this CRUD function works. <br>
 
-As second argument, it takes router, which You already have imported.
+`model` - It's the first argument. I'm sure You have a model for Your collection already, but if not: 
+* read [Mongoose Models docs](https://mongoosejs.com/docs/models.html),
+* create model, 
+* import it to route file
+* replace the first argument with Your model.
 
-As last argument, it takes `options`. **THEY ARE OPTIONAL!** `options` is an object containing: 
+`router` - Is the second argument which You already have imported from express.Router().
+
+`options` - Is the last argument. **THIS ARGUMENT IS OPTIONAL!** `options` is an object containing: 
 ```
 {
-	sort: String (You can pass here any name of value from collection. Default is 'createDate')
-	methods: Array[] (You can pass here any methods from available methods mentioned below in Available Methods section. By default all of them are active)
-	pathFromCollection: Boolean
+	sort: String (You can pass here any name of key from collection. Default is 'createdAt')
+	methods: Array of strings (You can pass here any of available methods mentioned below in Available Methods section. By default all of them are selected)
+	pathFromCollection: { type: Boolean, default: true } (described below)
 }
 ```
 
-**By default URLs for Your endpoints are /api/your-collection-name/:method, cause pathFromCollection option is set to TRUE**
+# Available Methods
+* Get - /
+* GetById - /:id
+* GetPagination - /page/:page/limit/:limit
+* Post - /
+* Put - /:id
+* Delete - /:id
 
-You can disable it by using setting it to `false` in `options` object and defining endpoint name on Your own as first parameter of app.use() in Your app
+# URLs 
+**By default URLs for Your endpoints are `/api/your-collection-name/:method`, cause pathFromCollection option is set to TRUE**
 
-Some endpoints examples:
- 
-For example:
+You can disable it by setting 
+```
+{
+	pathFromCollection: false
+}
+```
+in `options` object and defining endpoint name on Your own as first parameter of `app.use()` in Your app
+
+## Endpoints name examples
+
+------------------------
+
 * Collection name: Users
 * Example method: Get
 * HTTP Method: GET
@@ -95,19 +128,15 @@ For example:
 * HTPP Method: PUT
 * Path: /api/projects/:id
 
-## Available Methods
-* Get - /
-* GetById - /:id
-* GetPagination - /page/:page/limit/:limit
-* Post - /
-* Put - /:id
-* Delete - /:id
+------------------------
 
-## Real code examples
+# Real code examples
 
 :heavy_exclamation_mark: [Example app](https://github.com/RobertMrowiec/surprise-crud-example-app) :heavy_exclamation_mark:
 
 * Example route file with only Get and GetById method and sort by name: 
+
+_routes/currencies/route.js_
 
 ```
 const express = require('express');
@@ -120,32 +149,43 @@ crud(Currency, router, { methods: ['Get', 'GetById'], sort: 'name' });
 module.exports = router;
 ```
 ------------------------
-* Example route file with custom path ( `pathFromCollection` set to false ) : 
+* Example route file with custom route name ( `pathFromCollection` set to false ) : 
+
+_routes/users/route.js_
 
 ```
 const express = require('express');
 const router = express.Router();
-const Currency = require('../models/Currency');
+const User = require('../models/User');
 const { crud } = require('surprise-crud');
 
-crud(Currency, router, { pathFromCollection: false });
+crud(User, router, { pathFromCollection: false });
 
 module.exports = router;
+```
+
+and You have to define route name in Your app.use():
+
+_app.js_
+
+```
+app.use('/superusers', require('./routes/users/route'))
 ```
 ------------------------
 * Example route file with every methods ( remember they're default, so if You don't pass any method array, every method will be available ) and default sort: 
 
+_routes/users/route.js_
+
 ```
 const express = require('express');
 const router = express.Router();
-const Users = require('../models/core/Users');
+const User = require('../models/User');
 const { crud } = require('surprise-crud');
 
-crud(Users, router);
+crud(User, router);
 
 module.exports = router;
 ```
-
 ## Tests
 `Soon`
 
