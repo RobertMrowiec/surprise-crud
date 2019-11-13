@@ -12,6 +12,8 @@ It's a package which creates default CRUD options for Your applications. You don
 
 It will setup it for You.
 
+You can also check out my [surprisejs-cors](https://www.npmjs.com/package/surprisejs-cors) library, which setup cors in Your express app very quickly, with small amount of work from Your side.
+
 ## Prerequisites
 
 You will need the following things installed on your computer.
