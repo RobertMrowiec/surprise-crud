@@ -1,5 +1,7 @@
 # Surprise-CRUD
 
+(Documentation page)[in 30min]
+
 It's a package which creates default CRUD options for Your applications. You don't have to care about:
 * GET,
 * GET By ID, 
