@@ -27,7 +27,7 @@ At this moment, this package works only with MongoDB and Express, but soon will 
 	* working connection to MongoDB
 	* bodyParser
 
-* or just use my example app described below in Real code examples section.
+* or just use my example app described below in `Configuration with examples` section.
 
 # Installation
 
