@@ -51,7 +51,7 @@ Now we can move to configuration.
 In documentation & example app
 
 :heavy_exclamation_mark: [Example app](https://github.com/RobertMrowiec/surprise-crud-example-app) :heavy_exclamation_mark:
-:blue_book: On [Documentation page](https://robertmrowiec.github.io/surprise-crud-page) :orange_book:
+:blue_book: [Documentation page](https://robertmrowiec.github.io/surprise-crud-page) :orange_book:
 
 ## Tests
 `Soon`
