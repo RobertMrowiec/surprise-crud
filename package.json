@@ -8,7 +8,7 @@
   "bundleDependencies": false,
   "deprecated": false,
   "description": "Simple Express Mongoose Crud - This npm allow You to use basic crud for Express with Mongoose like: GET, GETBYID, POST, PUT, DELETE",
-  "homepage": "https://github.com/black09bb/expressCrud#readme",
+  "homepage": "https://robertmrowiec.github.io/surprise-crud-page",
   "keywords": [
     "Nodejs",
     "Express",
